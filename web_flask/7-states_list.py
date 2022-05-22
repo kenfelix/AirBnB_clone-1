@@ -5,7 +5,7 @@ Must use storage for fetching data from the storage engine
 Remove the current SQLAlchemy Session after each request
 """
 from flask import Flask, render_template
-from models import storage, 
+from models import storage
 
 app = Flask(__name__)
 
