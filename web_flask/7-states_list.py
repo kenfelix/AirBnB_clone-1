@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
-script that starts a Flask web application
+Must be listening on 0.0.0.0, port 5000
+Must use storage for fetching data from the storage engine
+Remove the current SQLAlchemy Session after each request
 """
 from flask import Flask, render_template
 from models import storage, 
