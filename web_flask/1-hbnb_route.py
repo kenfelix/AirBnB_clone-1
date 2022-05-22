@@ -2,7 +2,6 @@
 """
 script that starts a Flask web application
 """
-from email.policy import strict
 from flask import Flask
 
 app = Flask(__name__)

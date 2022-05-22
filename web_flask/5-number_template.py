@@ -2,7 +2,6 @@
 """
 script that starts a Flask web application
 """
-from email.policy import default, strict
 from flask import Flask, render_template
 
 app = Flask(__name__)
