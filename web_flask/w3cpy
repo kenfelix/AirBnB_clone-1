@@ -1,0 +1,2 @@
+#/bin/user/python3
+python3 w3c_validator.py "$1"

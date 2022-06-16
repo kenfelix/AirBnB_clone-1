@@ -7,37 +7,49 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def hello():
-    """display “Hello HBNB!”"""
-    return "Hello HBNB!"
+    """
+    Returns “Hello HBNB!”
+    """
+    return 'Hello HBNB!'
 
 
-@app.route("/hbnb", strict_slashes=False)
-def hbnb():
-    """displays HBNB"""
-    return "HBNB"
+@app.route('/hbnb', strict_slashes=False)
+def display_hbnb():
+    """
+    Returns HBNB
+    """
+    return 'HBNB'
 
 
-@app.route("/c/<text>", strict_slashes=False)
-def ctext(text: str):
-    """display “C ” followed by the value of the text variable"""
+@app.route('/c/<text>', strict_slashes=False)
+def dispaly_c(text):
+    """
+    Display “C ” followed by the value of the text variable
+    """
     text = text.replace('_', ' ')
-    return "C " + text
+
+    return 'C {}'.format(text)
 
 
-@app.route("/python/<text>", strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 @app.route("/python", strict_slashes=False)
-def pytext(text: str = "is cool"):
-    """display “C ” followed by the value of the text variable"""
+def display_python(text='is cool'):
+    """
+    Displays  “Python ”, followed by the value of the text variable
+    The default value of text is “is cool”
+    """
     text = text.replace('_', ' ')
-    return "Python " + text
+    return 'Python {}'.format(text)
 
 
-@app.route("/number/<n>", strict_slashes=False)
-def number(n: int):
-    """display “n is a number” only if n is an integer"""
-    return "{:d} is a number".format(n)
+@app.route('/number/<int:n>', strict_slashes=False)
+def is_a_number(n):
+    """
+    display “n is a number” only if n is an integer
+    """
+    return "{} is a number".format(n)
 
 
 if __name__ == '__main__':

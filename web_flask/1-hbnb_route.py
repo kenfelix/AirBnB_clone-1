@@ -7,16 +7,20 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def hello():
-    """display “Hello HBNB!”"""
-    return "Hello HBNB!"
+    """
+    Returns “Hello HBNB!”
+    """
+    return 'Hello HBNB!'
 
 
-@app.route("/hbnb", strict_slashes=False)
-def hbnb():
-    """displays HBNB"""
-    return "HBNB"
+@app.route('/hbnb', strict_slashes=False)
+def display_hbnb():
+    """
+    Returns HBNB
+    """
+    return 'HBNB'
 
 
 if __name__ == '__main__':
